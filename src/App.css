@@ -8,6 +8,7 @@
   --body-bg-color: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
   --clock-bg-color: rgba(255, 255, 255, 0.95);
   --clock-size: 300px;
+  --central-dot-size: 1rem;
   --font-family: Arial, Helvetica, sans-serif;
   --font-size: 1.5em;
 }
@@ -28,6 +29,18 @@ body {
   border-radius: 50%;
   width: var(--clock-size);
   height: var(--clock-size);
+}
+
+.clock::after {
+  content: '';
+  background: #000;
+  border-radius: 50%;
+  width: var(--central-dot-size);
+  height: var(--central-dot-size);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .number {
