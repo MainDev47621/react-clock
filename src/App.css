@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+:root {
+  --body-bg-color: linear-gradient(to right, hsl(200, 100%, 50%), hsl(175, 100%, 50%));
+  --clock-bg-color: rgba(255, 255, 255, 0.95);
+  --clock-size: 300px;
+  --font-family: Arial, Helvetica, sans-serif;
+  --font-size: 1.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  background: var(--body-bg-color);
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-.App-link {
-  color: #61dafb;
+.clock {
+  position: relative;
+  background: var(--clock-bg-color);
+  border-radius: 50%;
+  width: var(--clock-size);
+  height: var(--clock-size);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.number {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) rotate(calc(var(--rotation) * 30deg));
+  height: 100%;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+}
+
+.num-box {
+  position: absolute;
+  transform: rotate(calc(var(--tilt) * -30deg));
 }
