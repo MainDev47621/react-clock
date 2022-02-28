@@ -53,6 +53,5 @@ body {
 }
 
 .num-box {
-  position: absolute;
   transform: rotate(calc(var(--tilt) * -30deg));
 }
