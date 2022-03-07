@@ -11,6 +11,21 @@
   --central-dot-size: 1rem;
   --font-family: Arial, Helvetica, sans-serif;
   --font-size: 1.5em;
+
+  --hand-bg-color: #000;
+  --hand-border-color: #fff;
+  --hand-border-top-left-radius: 0.625em;
+  --hand-border-top-right-radius: 0.625em;
+
+  --second-hand-bg-color: red;
+  --second-hand-height: 42%;
+  --second-hand-width: 3px;
+
+  --minute-hand-height: 38%;
+  --minute-hand-width: 7px;
+
+  --hour-hand-height: 30%;
+  --hour-hand-width: 10px;
 }
 
 body {
@@ -43,7 +58,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-.number {
+.clock .number {
   position: absolute;
   left: 50%;
   transform: translateX(-50%) rotate(calc(var(--rotation) * 30deg));
@@ -52,6 +67,54 @@ body {
   font-size: var(--font-size);
 }
 
-.num-box {
-  transform: rotate(calc(var(--tilt) * -30deg));
+.clock .number .num-box {
+  --num-box-rotate: rotate(calc(var(--tilt) * -30deg));
+  transform: var(--num-box-rotate);
+  -o-transform: var(--num-box-rotate);
+  -ms-transform: var(--num-box-rotate);
+  -moz-transform: var(--num-box-rotate);
+  -webkit-transform: var(--num-box-rotate);
+}
+
+.clock .hand {
+  --rotation: 0;
+  --hand-transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  --hand-transform-origin: bottom;
+  background-color: var(--hand-bg-color);
+  border: var(--hand-border-color);
+  border-top-left-radius: var(--hand-border-top-left-radius);
+  border-top-right-radius: var(--hand-border-top-right-radius);
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+
+  transform: var(--hand-transform);
+  -o-transform: var(--hand-transform);
+  -ms-transform: var(--hand-transform);
+  -moz-transform: var(--hand-transform);
+  -webkit-transform: var(--hand-transform);
+
+  transform-origin: var(--hand-transform-origin);
+  -o-transform-origin: var(--hand-transform-origin);
+  -ms-transform-origin: var(--hand-transform-origin);
+  -moz-transform-origin: var(--hand-transform-origin);
+  -webkit-transform-origin: var(--hand-transform-origin);
+
+  z-index: 10;
+}
+
+.clock .hand.second {
+  background: var(--second-hand-bg-color);
+  height: var(--second-hand-height);
+  width: var(--second-hand-width);
+}
+
+.clock .hand.minute {
+  height: var(--minute-hand-height);
+  width: var(--minute-hand-width);
+}
+
+.clock .hand.hour {
+  height: var(--hour-hand-height);
+  width: var(--hour-hand-width);
 }

@@ -2,6 +2,6 @@ import React from 'react'
 
 export default function SecondHand() {
   return (
-    <div>SecondHand</div>
+    <div className="hand second"></div>
   )
 }

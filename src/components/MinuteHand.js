@@ -2,6 +2,6 @@ import React from 'react';
 
 export function MinuteHand() {
     return (
-        <div>Second Hand</div>
+        <div className="hand minute">Second Hand</div>
     )
 }
