@@ -1,7 +1,13 @@
 import React from 'react'
 
-export default function HourHand() {
+export default function HourHand({ currHours }) {
+
+  const hoursRatio = currHours / 12;
+
   return (
-    <div className="hand hour"></div>
+    <div
+      className="hand hour"
+      style={{'--rotation': hoursRatio}}>
+    </div>
   )
 }

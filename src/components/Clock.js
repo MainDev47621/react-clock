@@ -18,6 +18,7 @@ export default function Clock() {
   }
 
   useEffect(() => {
+    getDate();
     intervalID.current = setInterval(getDate, 1000);
     return () => {
       clearInterval(intervalID.current);

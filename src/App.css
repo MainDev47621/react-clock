@@ -78,7 +78,7 @@ body {
 
 .clock .hand {
   --rotation: 0;
-  --hand-transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+  --hand-transform: translateX(-50%) rotate(calc(var(--rotation) * 360deg));
   --hand-transform-origin: bottom;
   background-color: var(--hand-bg-color);
   border: var(--hand-border-color);
