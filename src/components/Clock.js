@@ -33,6 +33,7 @@ export default function Clock() {
       ))}
       <SecondHand currSecond={currSecond} />
       <MinuteHand currMinute={currMinute} />
+      <HourHand currHour={currHour} />
     </div>
   )
 }
