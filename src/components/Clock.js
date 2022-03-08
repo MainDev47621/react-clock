@@ -32,6 +32,7 @@ export default function Clock() {
           <Number key={`number${num}`} num={num} />
       ))}
       <SecondHand currSecond={currSecond} />
+      <MinuteHand currMinute={currMinute} />
     </div>
   )
 }
